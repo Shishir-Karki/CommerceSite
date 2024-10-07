@@ -1,23 +1,15 @@
-
-import { useState } from 'react';
+import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
-import ProductList from './components/ProductList';
 import { Route, Routes } from 'react-router-dom';
-import Cart from './components/Cart';
+import Login from './components/Login';
+import Body from './components/Body';
 
 function App() {
-  const [query, setQuery] = useState("")
-
-
-
   return (
     <div className="App">
-      <Navbar query={query} setQuery={setQuery}/>
       <Routes>
-        <Route path="/" element={<ProductList query={query}/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-       
+        <Route path="/" element={<Login />} />
+        <Route path="/*" element={<Body />} />
       </Routes>
     </div>
   );
